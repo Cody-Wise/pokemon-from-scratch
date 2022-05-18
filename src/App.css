@@ -2,13 +2,22 @@
   text-align: center;
 }
 
-.loading-spinner {
+.App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
+.loading-spinner {
+  height: 100vh;
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: spin 0.3s infinite ease-in-out;
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  .loading-spinner {
+  .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
@@ -28,7 +37,7 @@
   color: #61dafb;
 }
 
-@keyframes loading-spinner-spin {
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }

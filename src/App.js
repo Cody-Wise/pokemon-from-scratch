@@ -11,26 +11,26 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    async function getAllPokemon() {
+    async function load() {
       setLoading(true);
       const response = await getPokemon(query);
       setPokemon(response.data.results);
       setLoading(false);
     }
-    getAllPokemon();
+    load();
   }, []); //eslint-disable-line
 
-  async function handleQuery(e) {
+  async function handleSearch(e) {
     e.preventDefault();
 
-    async function getAllPokemon() {
+    async function load() {
       setLoading(true);
       const { data } = await getPokemon(query);
       setPokemon(data.results);
       setLoading(false);
     }
 
-    getAllPokemon();
+    load();
   }
   return (
     <div className="App">
@@ -40,7 +40,7 @@ function App() {
         ) : (
           <div>
             <h1>Pokemon Search</h1>
-            <form onSubmit={handleQuery}>
+            <form onSubmit={handleSearch}>
               <input onChange={(e) => setQuery(e.target.value)} />
               <button>Search</button>
             </form>
